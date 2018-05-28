@@ -11,19 +11,19 @@ No special pre-requisites.
 Role Variables
 --------------
 
-| Name                 | Default | Description                          |
-|----------------------|---------|--------------------------------------|
-| awscli_version       | 1.9.12  | Version of awscli to install         |
+| Name                 | Default  | Description                          |
+|----------------------|----------|--------------------------------------|
+| awscli_version       | 1.11.55  | Version of awscli to install         |
 
 Dependencies
 ------------
 
-- shared/pip
+- ansible-pip
 
 Example Playbook
 ----------------
 
     - hosts: servers
       roles:
-        - role: shared/logrotate
-          awscli_version: 1.9.7
+        - role: ansible-awscli
+          awscli_version: 1.11.55
