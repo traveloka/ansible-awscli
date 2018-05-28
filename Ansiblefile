@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site "https://galaxy.ansible.com/api/v1"
+
+role "ansible-pip",
+    git: "git@github.com:traveloka/ansible-pip.git",
+    ref: "v1.0.0"

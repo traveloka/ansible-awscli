@@ -1,0 +1,10 @@
+---
+# tasks file for awscli
+
+- name: awscli
+  become: yes
+  pip:
+    name: awscli
+    version: "{{ awscli_version }}"
+  tags:
+    - awscli
