@@ -1,4 +1,4 @@
-shared/awscli
+ansible-awscli
 =============
 
 Installs awscli.
