@@ -1,6 +1,14 @@
 ---
 # tasks file for awscli
 
+- include_role:
+    name: ansible-pip
+  when: ansible_distribution_version is version_compare('16.04', '<=')
+
+- include_role:
+    name: ansible-pip3
+  when: ansible_distribution_version is version_compare('20.04', '>=')
+
 - name: awscli
   become: yes
   pip:

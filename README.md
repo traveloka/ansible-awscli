@@ -18,7 +18,9 @@ Role Variables
 Dependencies
 ------------
 
-- ansible-pip
+Defined in tasks/main.yml using `include_role` module:
+- ansible-pip when OS <= Ubuntu 16
+- ansible-pip3 when OS >= Ubuntu 20
 
 Example Playbook
 ----------------
