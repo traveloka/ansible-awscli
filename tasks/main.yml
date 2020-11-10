@@ -6,15 +6,6 @@
     - include_role:
         name: ansible-pip
 
-    - name: ensure awscli is installed using pip
-      become: yes
-      pip:
-        name: awscli
-        version: "{{ awscli_version }}"
-        executable: pip
-      tags:
-        - awscli
-
   when: ansible_distribution_version is version_compare('16.04', '<=')
 
 - block:
@@ -22,13 +13,13 @@
     - include_role:
         name: ansible-pip3
 
-    - name: ensure awscli is installed using pip3
-      become: yes
-      pip:
-        name: awscli
-        version: "{{ awscli_version }}"
-        executable: pip3
-      tags:
-        - awscli
-
   when: ansible_distribution_version is version_compare('20.04', '>=')
+
+- name: ensure awscli is installed using pip
+  become: yes
+  pip:
+    name: awscli
+    version: "{{ awscli_version }}"
+    executable: "{{ awscli_pip_executable | default(omit) }}"
+  tags:
+    - awscli

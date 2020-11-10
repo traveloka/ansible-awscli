@@ -15,6 +15,12 @@ Role Variables
 |----------------------|----------|--------------------------------------|
 | awscli_version       | 1.11.55  | Version of awscli to install         |
 
+Optional Variables
+------------------
+- name: awscli_pip_executable
+  description: Name of pip executable to use to install awscli. By default it's omitted, and rely on Ansible auto discovery.
+
+
 Dependencies
 ------------
 
